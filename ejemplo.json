@@ -1,0 +1,44 @@
+var preguntasQuiz  = [
+{
+  type: "text",
+  text: “¿Qué tomarías en una mañana lluviosa?”,
+  possibilities: [
+    {
+    respuesta: "Café"
+    },
+    {
+    respuesta: "Té"
+    },
+    {
+    respuesta: "Chocolate caliente"
+    },
+    {
+    respuesta: "Vodka"
+    }
+  ],
+  selected: null,
+  correct: null
+},
+/* Para otra pregunta, Copiar desde aquí*/
+{
+  type: "text",
+  text: “Aqui va otra pregunta”,
+  possibilities: [
+    {
+    respuesta: "1"
+    },
+    {
+    respuesta: "2"
+    },
+    {
+    respuesta: "3"
+    },
+    {
+    respuesta: "4"
+    }
+  ],
+  selected: null,
+  correct: null
+},
+/* Hasta aquí */
+];

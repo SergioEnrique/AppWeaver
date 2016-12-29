@@ -78,8 +78,8 @@
                 <div class="well well-sm" ng-show="quiz.finalizar" style="background: transparent!important; border: none">
                     <div class="row">
                         <div class="col-xs-12">
-                            <h3 style="text-align: center">¿Estas seguro de querer enviar tus respeustas?</h3>
-                            <button class="botonesSiNo btn btn-primary btn-round-lg btn-lg btn-option" ng-click="quiz.finalizarRespuestas(); quiz.quizMetrics.opcionUno()">Si</button>
+                            <h3 style="text-align: center">¿Estas seguro de querer enviar tus respuestas?</h3>
+                            <button class="botonesSiNo btn btn-primary btn-round-lg btn-lg btn-option" ng-click="quiz.finalizarRespuestas();">Si</button>
                             <button class="botonesSiNo dange btn btn-primary btn-round-lg btn-lg btn-option" ng-click="quiz.finalizar = false">No</button>
                         </div>
                     </div>
@@ -89,80 +89,14 @@
         </div> <!-- Quiz controller -->
 
         <div ng-controller="resultadosCtrl as resultados" ng-show="resultados.quizMetrics.resultadosActivos">
-            <!-- barra de respuestas correctas e incorrectas -->
-            <!--div class="row">
-                <div class="col-xs-8">
-                    <div class="btn-toolbar">
-                        <button class="btn"
-                                ng-repeat="pregunta in resultados.dataService.preguntasQuiz"
-                                ng-class="{'btn-success': pregunta.correct, 'btn-danger': !pregunta.correct}"
-                                ng-click="resultados.ponerPreguntaActiva($index)">
-                                <span class="glyphicon" ng-class="{'glyphicon-ok': pregunta.correct, 'glyphicon-remove': !pregunta.correct}"></span>
-                        </button>
-                    </div>
-                </div>
-                <div class="col-xs-4">
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <button class="btn btn-success">
-                                <span class="glyphicon glyphicon-ok"></span>
-                            </button>
-                            <p>Correcto</p>
-                        </div>
-                        <div class="col-sm-4">
-                            <button class="btn btn-danger">
-                                <span class="glyphicon glyphicon-remove"></span>
-                            </button>
-                            <p>Incorrecto</p>
-                        </div>
-                    </div>
-                </div>
-            </div--> <!-- row -->
-
-            <div class="row"></div>
-            <div class="row">
-                <div class="col-xs-12 top-buffer">
-                    <!--h2>Marcador: {{resultados.quizMetrics.numCorrect}} / {{resultados.dataService.preguntasQuiz.length}}</h2 MARCADOR-->
-                    <!--h2><strong>{{resultados.calcularPorcentaje() | number:2}}%</strong></h2 PORCENTAJE-->
-                </div>
-            </div>
-
-            <div class="row" ng-controller="resultsCtrl as nResultados">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <h1>{{prueba}}</h1>
-                            <button ng-click="emitMessage();">Emitir Mensaje</button>
-                        </div>
-                    </div>
-                </div>
-                <!--div class="well well-sm">
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <h4>{{resultados.preguntaActiva+1 + ". "+resultados.dataService.preguntasQuiz[resultados.preguntaActiva].text}}</h4>
-                            <div class="row" ng-if="resultados.dataService.preguntasQuiz[resultados.preguntaActiva].type === 'text'">
-                                <div class="col-sm-6" ng-repeat="respuesta in resultados.dataService.preguntasQuiz[resultados.preguntaActiva].posibilidades">
-                                    <h4 class="respuesta" ng-class="resultados.getAnswerClass($index)">
-                                        {{respuesta.respuesta}}
-                                        <p class="pull-right" ng-show="$index !== resultados.quizMetrics.respuestasCorrectas[resultados.preguntaActiva] && $index === resultados.dataService.preguntasQuiz[resultados.preguntaActiva].selected">Tu respuesta</p>
-                                        <p class="pull-right" ng-show="$index === resultados.quizMetrics.respuestasCorrectas[resultados.preguntaActiva]">Respuesta correcta</p>
-                                    </h4>
-                                </div>
-                            </div><!-- row -->
-
-                            <!--div class="row" ng-if="resultados.dataService.preguntasQuiz[resultados.preguntaActiva].type === 'image'">
-                                <div class="col-sm-6" ng-repeat="respuesta in resultados.dataService.preguntasQuiz[resultados.preguntaActiva].posibilidades">
-                                    <div class="respuestaConImagen" ng-class="resultados.getAnswerClass($index)">
-                                        <img ng-src="{{respuesta.respuesta}}">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div--> <!--well>
-            </div RESULTADOS-->
 
             <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h1>Mensaje de resultados</h1>
+                        <p>Texto de Opción 1: {{texto}}</p>
+                    </div>
+                </div>
                 <div class="row">
                     <button class="btn btn-primary btn.lg" ng-click="resultados.reset()">Regresar</button>
                 </div>
